@@ -1,19 +1,17 @@
-# Express.js on Netlify Example
+# SSO example using Netlify
+
+### One click deploy
 
 [![Deploy to
 Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philals/netlify-express)
 
-An example of how to host an Express.js app on Netlify using
-[serverless-http](https://github.com/dougmoscrop/serverless-http). See
-[express/server.js](express/server.js) for details, or check it out at
-https://netlify-express.netlify.com/!
+Add the follow env vars:
 
-[index.html](index.html) simply loads html from the Express.js app using `<object>`, and the
-app is hosted at `/.netlify/functions/server`. Examples of how to access the
-Express.js endpoints:
-
-```sh
-curl https://netlify-express.netlify.com/.netlify/functions/server
-curl https://netlify-express.netlify.com/.netlify/functions/server/another
-curl --header "Content-Type: application/json" --request POST --data '{"json":"POST"}' https://netlify-express.netlify.com/.netlify/functions/server
 ```
+XERO_CLIENT_ID: {Your client ID},
+XERO_CLIENT_SECRET: {Your client secret}
+```
+
+You will be given a `Netlify` URL for your app. Replace the callback URL in [Xero's developer portal](https://developer.xero.com/myapps) with this URL and append `/callback` to it.
+
+Forked from: https://github.com/neverendingqs/netlify-express. Check out the readme there for more detials.
