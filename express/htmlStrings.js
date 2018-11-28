@@ -13,7 +13,7 @@ h1 {
 }
 label {
   display: block;
-}</style></head><body><h1>Serverless Zeit Xero SSO App</h1><img class="mountain-logo" src="images/mountain.png"><p><a href="login"> <img class="mountain-logo" src="images/xero_login.png"></a></p></body></html>`
+}</style></head><body><h1>Serverless Zeit Xero SSO App</h1><img class="mountain-logo" src="/images/mountain.png"><p><a href="login"> <img class="mountain-logo" src="/images/xero_login.png"></a></p></body></html>`
 
 function appHtml(email) {
   return `
@@ -34,7 +34,7 @@ p {
 }
 label {
   display: block;
-}</style></head><body><h1>Serverless Zeit Xero SSO App</h1><img class="mountain-logo" src="images/volcano.png"><p>Welcome ${email}</p></body></html>`
+}</style></head><body><h1>Serverless Zeit Xero SSO App</h1><img class="mountain-logo" src="/images/volcano.png"><p>Welcome ${email}</p></body></html>`
 }
 
 module.exports = { rootHtml, appHtml }
