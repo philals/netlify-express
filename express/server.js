@@ -1,19 +1,40 @@
-'use strict';
+const strings = require('./htmlStrings');
+const shared = require('./shared');
+
+const { client, makeSureDiscover, redirect } = shared;
+const { rootHtml, appHtml } = strings;
+
 const express = require('express');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 
 const router = express.Router();
-router.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
-  res.end();
+
+router.get('/', async (req, res) => {
+  await makeSureDiscover();
+  res.send(rootHtml)
 });
-router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
-router.post('/', (req, res) => res.json({ postBody: req.body }));
+
+router.get('/callback', async (req, res) => {
+  await makeSureDiscover();
+
+  let tokenSet = await client.authorizationCallback('https://sso.philalsford.com/callback', req.query) // => Promise
+  console.log('received and validated tokens %j', tokenSet);
+  console.log('validated id_token claims %j', tokenSet.claims);
+
+  let email = tokenSet.claims.email;
+
+  res.send(appHtml(email))
+});
+
+router.get('/login', async (req, res) => {
+  await makeSureDiscover();
+  res.redirect(redirect);
+});
 
 app.use(bodyParser.json());
+
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 module.exports = app;

@@ -1,3 +1,6 @@
 [build]
   command = "npm install && npm run build"
   functions = "functions"
+[template.environment]
+  XERO_CLIENT_ID = "your client id"
+  XERO_CLIENT_SECRET = "your client secret"
