@@ -10,6 +10,10 @@ async function makeSureDiscover() {
     console.log('well-known has resolved')
     console.log('Discovered issuer %s %O', xeroIssuer.issuer, xeroIssuer.metadata);
 
+    console.log("​--------------------------------------------------------------------------")
+    console.log("​makeSureDiscover -> process.env.XERO_CLIENT_ID", process.env.XERO_CLIENT_ID)
+    console.log("​--------------------------------------------------------------------------")
+
     client = new xeroIssuer.Client({
       client_id: process.env.XERO_CLIENT_ID,
       client_secret: process.env.XERO_CLIENT_SECRET
