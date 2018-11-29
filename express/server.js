@@ -10,19 +10,19 @@ const bodyParser = require('body-parser');
 const { Issuer } = require('openid-client');
 
 let client;
-let redirect;
+let callbackURL;
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  await makeSureDiscover();
+  await setUpOIConfig();
   res.send(rootHtml)
 });
 
 router.get('/callback', async (req, res) => {
-  await makeSureDiscover();
+  await setUpOIConfig();
 
-  let tokenSet = await client.authorizationCallback('https://sso.philalsford.com/callback', req.query) // => Promise
+  let tokenSet = await client.authorizationCallback(callbackURL, req.query) // => Promise
   console.log('received and validated tokens %j', tokenSet);
   console.log('validated id_token claims %j', tokenSet.claims);
 
@@ -32,17 +32,14 @@ router.get('/callback', async (req, res) => {
 });
 
 router.get('/login', async (req, res) => {
-  await makeSureDiscover();
-  console.log('in /login and going to ', redirect);
-  res.redirect(redirect);
+  await setUpOIConfig();
+  res.redirect(callbackURL);
 });
 
 app.use(bodyParser.json());
-
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
-
-async function makeSureDiscover() {
+async function setUpOIConfig() {
   if (!client) {
     let xeroIssuer = await Issuer.discover('https://integration-identity.xero-uat.com/.well-known/openid-configuration') // => Promise
     console.log('well-known has resolved')
@@ -57,12 +54,12 @@ async function makeSureDiscover() {
       client_secret: process.env.XERO_CLIENT_SECRET
     }); // => Client
 
-    redirect = client.authorizationUrl({
+    callbackURL = client.authorizationUrl({
       redirect_uri: process.env.URL + '/callback',
       scope: 'openid email profile',
     }); // => String (URL)
 
-    console.log("​redirectUrl: ", redirect)
+    console.log("​redirectUrl: ", callbackURL)
   }
 }
 
