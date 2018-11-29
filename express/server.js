@@ -30,7 +30,7 @@ router.get('/callback', async (req, res) => {
 
 router.get('/login', async (req, res) => {
   await makeSureDiscover();
-  res.redirect(redirect);
+  res.redirect('https://google.com');
 });
 
 app.use(bodyParser.json());
