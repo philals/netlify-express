@@ -1,6 +1,6 @@
 const strings = require('./htmlStrings');
 
-const { rootHtml, appHtml } = strings;
+const { appHtml } = strings;
 
 const express = require('express');
 const serverless = require('serverless-http');
@@ -13,11 +13,6 @@ let client;
 let callbackURL;
 
 const router = express.Router();
-
-router.get('/', async (req, res) => {
-  await setUpOIConfig();
-  res.send(rootHtml)
-});
 
 router.get('/callback', async (req, res) => {
   await setUpOIConfig();
@@ -44,10 +39,6 @@ async function setUpOIConfig() {
     let xeroIssuer = await Issuer.discover('https://integration-identity.xero-uat.com/.well-known/openid-configuration') // => Promise
     console.log('well-known has resolved')
     console.log('Discovered issuer %s %O', xeroIssuer.issuer, xeroIssuer.metadata);
-
-    console.log("​--------------------------------------------------------------------------")
-    console.log("​makeSureDiscover -> process.env.XERO_CLIENT_ID", process.env.XERO_CLIENT_ID)
-    console.log("​--------------------------------------------------------------------------")
 
     client = new xeroIssuer.Client({
       client_id: process.env.XERO_CLIENT_ID,
