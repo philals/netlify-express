@@ -7,4 +7,5 @@
 [[redirects]]
   from = "/callback"
   to = "/.netlify/functions/server/callback?code=:code"
+  status = 302
   query = {code = ":code", scope = ":scope", session_state = ":session_state" }
