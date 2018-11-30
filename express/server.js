@@ -7,10 +7,12 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 
+const callbackUrl = 'https://sso.philalsford.com/callback';
+
 const { Issuer } = require('openid-client');
 
 let client;
-let callbackURL;
+let xeroAuthUrl;
 
 const router = express.Router();
 
@@ -20,9 +22,9 @@ router.get('/callback', async (req, res) => {
   console.log('In query');
 
   console.log('Query params: ', req.query);
-  console.log('callbackUrl: ', callbackURL);
+  console.log('callbackUrl: ', callbackUrl);
 
-  let tokenSet = await client.authorizationCallback(callbackURL, req.query) // => Promise
+  let tokenSet = await client.authorizationCallback(callbackUrl, req.query) // => Promise
   console.log('received and validated tokens %j', tokenSet);
   console.log('validated id_token claims %j', tokenSet.claims);
 
@@ -33,7 +35,7 @@ router.get('/callback', async (req, res) => {
 
 router.get('/login', async (req, res) => {
   await setUpOIConfig();
-  res.redirect(callbackURL);
+  res.redirect(xeroAuthUrl);
 });
 
 app.use(bodyParser.json());
@@ -50,14 +52,14 @@ async function setUpOIConfig() {
       client_secret: process.env.XERO_CLIENT_SECRET
     }); // => Client
 
-    callbackURL = client.authorizationUrl({
+    xeroAuthUrl = client.authorizationUrl({
       // TODO: resolve this
       // redirect_uri: process.env.URL,
-      redirect_uri: 'https://sso.philalsford.com/callback',
+      redirect_uri: callbackUrl,
       scope: 'openid email profile',
     }); // => String (URL)
 
-    console.log("​redirectUrl: ", callbackURL)
+    console.log("​redirectUrl: ", xeroAuthUrl)
   }
 }
 
