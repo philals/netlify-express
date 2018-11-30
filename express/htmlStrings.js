@@ -17,7 +17,7 @@ p {
 }
 label {
   display: block;
-}</style></head><body><h1>Serverless Zeit Xero SSO App</h1><img class="mountain-logo" src="/images/volcano.png"><p>Welcome ${email}</p></body></html>`
+}</style></head><body><h1>Netlify Xero SSO App</h1><img class="mountain-logo" src="/images/volcano.png"><p>Welcome ${email}</p></body></html>`
 }
 
 module.exports = { appHtml }
