@@ -17,6 +17,11 @@ const router = express.Router();
 router.get('/callback', async (req, res) => {
   await setUpOIConfig();
 
+  console.log('In query');
+
+  console.log('Query params: ', req.query);
+  console.log('callbackUrl: ', callbackURL);
+
   let tokenSet = await client.authorizationCallback(callbackURL, req.query) // => Promise
   console.log('received and validated tokens %j', tokenSet);
   console.log('validated id_token claims %j', tokenSet.claims);
