@@ -5,5 +5,6 @@
   XERO_CLIENT_ID = "your client id"
   XERO_CLIENT_SECRET = "your client secret"
 [[redirects]]
+  query = {code = ":code", scope = ":scope", session_state = ":session_state" }
   from = "/callback"
   to = "/.netlify/functions/server/callback"
