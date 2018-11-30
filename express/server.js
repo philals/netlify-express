@@ -46,7 +46,9 @@ async function setUpOIConfig() {
     }); // => Client
 
     callbackURL = client.authorizationUrl({
-      redirect_uri: process.env.URL + '/callback',
+      // TODO: resolve this
+      // redirect_uri: process.env.URL,
+      redirect_uri: 'https://philalsford.com/callback',
       scope: 'openid email profile',
     }); // => String (URL)
 
