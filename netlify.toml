@@ -5,5 +5,5 @@
   XERO_CLIENT_ID = "your client id"
   XERO_CLIENT_SECRET = "your client secret"
 [[redirects]]
-  from = "/*"
+  from = "/callback"
   to = "/.netlify/functions/server/callback"
