@@ -21,8 +21,8 @@ const router = express.Router();
 const XeroClient = require('xero-node').AccountingAPIClient;
 
 // @ts-ignore
-const config = require('./config.json');
-
+const config = require('./xero-config');
+// @ts-ignore
 const xero = new XeroClient(config);
 
 app.use(session({
