@@ -24,7 +24,7 @@ function appHtml(email, orgName) {
 <head>
 <title>Serverless Netlify Xero SSO App</title></head>
 ${css}
-<body><h1>Netlify Xero SSO App</h1><img class="mountain-logo" src="/images/flywheel.gif"><p>Welcome ${email}</p><p>Your Org us: ${orgName}</p></body></html>`
+<body><h1>Netlify Xero SSO App</h1><img class="mountain-logo" src="/images/flywheel.gif"><p>Welcome ${email}</p><p>Your Org is: ${orgName}</p></body></html>`
 }
 
 module.exports = { appHtml }
