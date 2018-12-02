@@ -1,6 +1,8 @@
-const strings = require('./htmlStrings');
+const db = require('./db');
 
+const strings = require('./htmlStrings');
 const { appHtml } = strings;
+var session = require('express-session')
 
 const express = require('express');
 const serverless = require('serverless-http');
@@ -16,6 +18,35 @@ let xeroAuthUrl;
 
 const router = express.Router();
 
+const XeroClient = require('xero-node').AccountingAPIClient;
+
+// @ts-ignore
+const config = require('./config.json');
+
+const xero = new XeroClient(config);
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}))
+
+router.get('/callback-oa1', async (req, res) => {
+  await setUpOIConfig();
+
+  const userId = req.session.userId;
+  const oauth_verifier = req.query.oauth_verifier;
+
+  const savedRequestToken = db.getRequestToken(userId);
+  const accessToken = await xero.oauth1Client.swapRequestTokenforAccessToken(savedRequestToken, oauth_verifier);
+
+  const result = await xero.organisations.get();
+
+  res.send(appHtml(req.session.email, result.Organisations[0].Name))
+});
+
+
 router.get('/callback', async (req, res) => {
   await setUpOIConfig();
 
@@ -29,8 +60,20 @@ router.get('/callback', async (req, res) => {
   console.log('validated id_token claims %j', tokenSet.claims);
 
   let email = tokenSet.claims.email;
+  let userId = tokenSet.claims.xero_userid;
 
-  res.send(appHtml(email))
+  // Create request token and get an authorisation URL
+  const requestToken = await xero.oauth1Client.getRequestToken();
+  console.log('Received Request Token:', requestToken);
+
+  db.saveRequestToken(userId, requestToken);
+
+  let authUrl = xero.oauth1Client.buildAuthoriseUrl(requestToken);
+
+  req.session.userId = userId;
+  req.session.userEmail = email;
+
+  res.redirect(authUrl);
 });
 
 router.get('/login', async (req, res) => {
