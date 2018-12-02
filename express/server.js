@@ -43,7 +43,7 @@ router.get('/callback-oa1', async (req, res) => {
 
   const result = await xero.organisations.get();
 
-  res.send(appHtml(req.session.email, result.Organisations[0].Name))
+  res.send(appHtml(req.session.userEmail, result.Organisations[0].Name))
 });
 
 
