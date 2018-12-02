@@ -1,19 +1,17 @@
-let config = {};
+// let config = {};
 
-try {
-  // @ts-ignore
-  config = require('./config.json');
+// try {
+//   // @ts-ignore
+//   config = require('./config.json');
+// }
+// catch{
+let config = {
+  "appType": "partner",
+  "consumerKey": process.env.OA1_CONSUMER_KEY,
+  "consumerSecret": process.env.OA1_CONSUMER_SECRET,
+  "privateKeyString": process.env.OA1_PRIVATE_KEY,
+  "callbackUrl": "https://sso.philalsford.com/.netlify/functions/server/callback-oa1"
 }
-catch{
-  config = {
-    "appType": "partner",
-    "consumerKey": process.env.OA1_CONSUMER_KEY,
-    "consumerSecret": process.env.OA1_CONSUMER_SECRET,
-    "privateKeyString": process.env.OA1_PRIVATE_KEY,
-    "callbackUrl": "https://sso.philalsford.com/.netlify/functions/server/callback-oa1"
-  }
-}
-
-
+// }
 
 module.exports = config;
