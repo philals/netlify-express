@@ -86,7 +86,7 @@ app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 async function setUpOIConfig() {
   if (!client) {
-    let xeroIssuer = await Issuer.discover('https://integration-identity.xero-uat.com/.well-known/openid-configuration') // => Promise
+    let xeroIssuer = await Issuer.discover('https://identity.xero.com/.well-known/openid-configuration') // => Promise
     console.log('well-known has resolved')
     console.log('Discovered issuer %s %O', xeroIssuer.issuer, xeroIssuer.metadata);
 

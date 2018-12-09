@@ -2,8 +2,11 @@
   command = "npm install && npm run build"
   functions = "functions"
 [template.environment]
-  XERO_CLIENT_ID = "your client id"
-  XERO_CLIENT_SECRET = "your client secret"
+  XERO_CLIENT_ID      = "oAuth 2 client id"
+  XERO_CLIENT_SECRET  = "oAuth 2 client secret"
+  OA1_CONSUMER_KEY    = "oAuth 1.0a consumer key"
+  OA1_CONSUMER_SECRET = "oAuth 1.0a consumer secret"
+  OA1_PRIVATE_KEY     = "Base 64 encoded private key"
 [[redirects]]
   from = "/callback"
   to = "/.netlify/functions/server/callback?code=:code&scope=:scope&session_state=:session_state"
