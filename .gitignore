@@ -3,6 +3,8 @@ logs
 *.log
 npm-debug.log*
 
+express/config.json
+
 # Runtime data
 pids
 *.pid
