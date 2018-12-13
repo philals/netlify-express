@@ -33,18 +33,22 @@ ${css}
   <h2>Here are a few of your bank accounts:</h2>
 
 <div class="xui-table xui-panel xui-table-hasheader">
-  <div class="xui-table-wrapper">
+  <div class="xui-table-wrapper xui-padding-large">
     <table class="xui-table-element">
       <thead class="xui-table--head">
         <tr class="xui-table--row xui-text-align-left">
           <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${acconts[0].Name}</span></th>
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-second" tabindex="0"><span>${acconts[0].BankAccountNumber}</span></th>
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-last" tabindex="0"><span><button class='xui-button xui-button-standard'>Copy</button></span></th>
         </tr>
         <tr class="xui-table--row xui-text-align-left">
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${acconts[1].Name}</span></th>
-        </tr>
+      <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${acconts[1].Name}</span></th>
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-second" tabindex="0"><span>${acconts[1].BankAccountNumber}</span></th>
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-last" tabindex="0"><span><button class='xui-button xui-button-standard'>Copy</button></span></th>        </tr>
         <tr class="xui-table--row xui-text-align-left">
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${acconts[2].Name}</span></th>
-        </tr>
+      <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${acconts[2].Name}</span></th>
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-second" tabindex="0"><span>${acconts[2].BankAccountNumber}</span></th>
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-last" tabindex="0"><span><button class='xui-button xui-button-standard'>Copy</button></span></th>        </tr>
       </thead>
       <tbody class="xui-table--body"></tbody>
     </table>
