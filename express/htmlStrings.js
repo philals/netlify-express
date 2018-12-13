@@ -31,11 +31,6 @@ ${css}
   <p>Welcome ${email}</p>
   <p>Your Org is: ${orgName}</p>
   <h2>Here are a few of your bank accounts:</h2>
-  <ul>
-    <li>${acconts[0].Name}</li>
-    <li>${acconts[1].Name}</li>
-    <li>${acconts[2].Name}</li>
-  </ul>
 
 <div class="xui-table xui-panel xui-table-hasheader">
   <div class="xui-table-wrapper">
