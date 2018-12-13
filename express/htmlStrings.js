@@ -20,12 +20,12 @@ label {
 function appHtml(email, orgName, acconts) {
   return `
 <!DOCTYPE html>
-<html>
+<html class="xui-html">
 <head>
 <link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.1/xui.min.css">
 <title>Serverless Netlify Xero SSO App</title></head>
 ${css}
-<body>
+<body class="xui-body">
   <h1>Netlify Xero SSO App</h1>
   <img class="mountain-logo" src="/images/flywheel.gif">
   <p>Welcome ${email}</p>
