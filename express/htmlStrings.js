@@ -33,7 +33,7 @@ ${css}
   <h2>Here are a few of your bank accounts:</h2>
 
 <div class="xui-table xui-panel xui-table-hasheader">
-  <div class="xui-table-wrapper">
+  <div class="xui-table-wrapper xui-padding-large">
     <table class="xui-table-element">
       <thead class="xui-table--head">
         <tr class="xui-table--row xui-text-align-left">
