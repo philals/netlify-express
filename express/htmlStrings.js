@@ -17,7 +17,7 @@ label {
   display: block;
 }</style>`
 
-function appHtml(email, orgName, contacts) {
+function appHtml(email, orgName, acconts) {
   return `
 <!DOCTYPE html>
 <html>
@@ -29,12 +29,11 @@ ${css}
   <img class="mountain-logo" src="/images/flywheel.gif">
   <p>Welcome ${email}</p>
   <p>Your Org is: ${orgName}</p>
-  <h2>Here are a few of your contactsL</h2>
+  <h2>Here are a few of your bank accounts:</h2>
   <ul>
-    <li>${contacts[0].Name}</li>
-    <li>${contacts[1].Name}</li>
-    <li>${contacts[2].Name}</li>
-    <li>${contacts[3].Name}</li>
+    <li>${acconts[0].Name}</li>
+    <li>${acconts[1].Name}</li>
+    <li>${acconts[2].Name}</li>
   </ul>
 </body>
 </html>`

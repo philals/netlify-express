@@ -42,10 +42,10 @@ router.get('/callback-oa1', async (req, res) => {
   const accessToken = await xero.oauth1Client.swapRequestTokenforAccessToken(savedRequestToken, oauth_verifier);
 
   const orgResult = await xero.organisations.get();
-  const contactResult = await xero.contacts.get();
-  const threeContacts = contactResult.Contacts.splice(0, 3);
+  const acctRes = await xero.accounts.get();
+  const threeAccts = acctRes.Accounts.splice(0, 3);
 
-  res.send(appHtml(req.session.userEmail, orgResult.Organisations[0].Name, threeContacts))
+  res.send(appHtml(req.session.userEmail, orgResult.Organisations[0].Name, threeAccts))
 });
 
 
