@@ -22,6 +22,7 @@ function appHtml(email, orgName, acconts) {
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.1/xui.min.css">
 <title>Serverless Netlify Xero SSO App</title></head>
 ${css}
 <body>
@@ -35,6 +36,26 @@ ${css}
     <li>${acconts[1].Name}</li>
     <li>${acconts[2].Name}</li>
   </ul>
+
+<div class="xui-table xui-panel xui-table-hasheader">
+  <div class="xui-table-wrapper">
+    <table class="xui-table-element">
+      <thead class="xui-table--head">
+        <tr class="xui-table--row xui-text-align-left">
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${acconts[0].Name}</span></th>
+        </tr>
+        <tr class="xui-table--row xui-text-align-left">
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${acconts[1].Name}</span></th>
+        </tr>
+        <tr class="xui-table--row xui-text-align-left">
+          <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${acconts[2].Name}</span></th>
+        </tr>
+      </thead>
+      <tbody class="xui-table--body"></tbody>
+    </table>
+  </div>
+</div>
+
 </body>
 </html>`
 }
