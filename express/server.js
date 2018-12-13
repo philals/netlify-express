@@ -9,7 +9,7 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 
-const callbackUrl = 'https://sso.philalsford.com/callback';
+const callbackUrl = process.env.URL + '/callback';
 
 const { Issuer } = require('openid-client');
 

@@ -6,7 +6,7 @@ let config = {
   "consumerKey": process.env.OA1_CONSUMER_KEY,
   "consumerSecret": process.env.OA1_CONSUMER_SECRET,
   "privateKeyString": buf,
-  "callbackUrl": "https://sso.philalsford.com/.netlify/functions/server/callback-oa1"
+  "callbackUrl": process.env.URL + "/.netlify/functions/server/callback-oa1"
 }
 
 module.exports = config;
