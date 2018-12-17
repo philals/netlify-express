@@ -70,21 +70,21 @@ ${css}
 
           <tr class="xui-table--row">
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-first xui-table--cell-singleline"><span
-                class="xui-text-emphasis">${invoices[0].Customer.Name}</span></td>
+                class="xui-text-emphasis">${invoices[0].Contact.Name}</span></td>
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-second xui-table--cell-singleline">${invoices[0].CurrencyCode}</td>
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-last xui-table--cell-singleline">$${invoices[0].Total}</td>
           </tr>
 
           <tr class="xui-table--row">
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-first xui-table--cell-singleline"><span
-                class="xui-text-emphasis">${invoices[1].Customer.Name}</span></td>
+                class="xui-text-emphasis">${invoices[1].Contact.Name}</span></td>
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-second xui-table--cell-singleline">${invoices[1].CurrencyCode}</td>
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-last xui-table--cell-singleline">$${invoices[1].Total}</td>
           </tr>
 
           <tr class="xui-table--row">
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-first xui-table--cell-singleline"><span
-                class="xui-text-emphasis">${invoices[2].Customer.Name}</span></td>
+                class="xui-text-emphasis">${invoices[2].Contact.Name}</span></td>
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-second xui-table--cell-singleline">${invoices[2].CurrencyCode}</td>
             <td tabindex="0" class="xui-table--cell xui-padding-small xui-table--cell-divider xui-table--cell-last xui-table--cell-singleline">$${invoices[2].Total}</td>
           </tr>
