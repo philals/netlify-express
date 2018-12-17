@@ -52,7 +52,7 @@ ${css}
 
             <th class="xui-table--cell xui-heading-separator xui-table--cell-secondtolast xui-table--sortbutton" role="button"
               tabindex="0">
-              <div><span>Quantity</span><svg focusable="false" class="xui-icon xui-table--sortbutton-icon" width="8"
+              <div><span>Currency</span><svg focusable="false" class="xui-icon xui-table--sortbutton-icon" width="8"
                   height="11" viewBox="0 0 8 11">
                   <path d="M3 0h2v8l2-2 1 1-4 4-4-4 1-1 2 2z" role="presentation"></path>
                 </svg></div>
