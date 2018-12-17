@@ -3,6 +3,11 @@ const css = `<style>
     margin: auto;
   }
 
+  .xui-table {
+    width: 650px;
+    margin: auto;
+  }
+
   h1 {
     text-align: center;
   }
