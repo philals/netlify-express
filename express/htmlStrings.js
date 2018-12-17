@@ -32,8 +32,29 @@ function appHtml(email, orgName, invoices) {
   <title>Serverless Netlify Xero SSO App</title>
 </head>
 ${css}
+<link rel="stylesheet" href="/css/demo.css">
+<link rel="stylesheet" href="/css/header-basic-light.css">
+<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
 <body class="xui-body">
+
+ <header class="header-basic">
+
+    <div class="header-limiter">
+
+      <h1><a href="#">Dino<span>Expenses</span></a></h1>
+
+      <nav>
+        <a href="#" class="selected">Expenses</a>
+        <a href="#">Comet Monitoring</a>
+        <a href="#">Insurance</a>
+        <a href="#">Faq</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+
+  </header>
+
   <h1 class="xui-text-align-center">Dinosaur Expenses Monitoring</h1>
 
   <img class="mountain-logo xui-padding-bottom-large" src="/images/sauropod.png">
