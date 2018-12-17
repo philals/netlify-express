@@ -19,6 +19,15 @@
       width: 10rem;
       margin: auto;
     }
+    .center-me {
+      display: block;
+      margin: auto;
+      transform: scale(2);
+    }
+
+    .make-me-right{
+      margin-left: 320px;
+    }
 
     .login-button {
       display: block;
@@ -29,10 +38,42 @@
 </head>
 
 <body class="xui-body">
-  <h1>Serverless Netlify Xero SSO App</h1>
-  <img class="mountain-logo" src="/images/mountain.png">
-  <button class="login-button xui-button-main" onclick="location.href='/.netlify/functions/server/login'" type="button">Login
-    with Xero</button>
+  <h1>Volcano Expenses Monitoring</h1>
+  <img class="mountain-logo xui-padding-bottom-large" src="/images/mountain.png">
+
+  <div class="xui-panel xui-padding xui-padding-top">
+    <form class="xui-form-layout">
+      <p class="xui-heading-panel">Sign up a new account</p>
+      <div class="xui-field-layout">
+        <label for="horizontaldemofield2" class="xui-text-label xui-fieldlabel-layout">Your name</label>
+        <div class="xui-textinputgroup">
+          <input class="xui-column-4-of-12 xui-textinput xui-textinput--input" id="horizontaldemofield2" placeholder="First"
+            aria-label="First name" />
+          <input class="xui-column-4-of-12 xui-textinput xui-textinput--input" placeholder="Middle" aria-label="Middle name" />
+          <input class="xui-column-4-of-12 xui-textinput xui-textinput--input" placeholder="Last" aria-label="Last name" />
+        </div>
+      </div>
+      <div class="xui-field-layout">
+        <label class="xui-text-label xui-fieldlabel-layout" for="field1">Email Address</label>
+        <input class="xui-textinput xui-textinput--input" type="text" id="field1" placeholder="" />
+      </div>
+      <div class="xui-field-layout">
+        <label class="xui-text-label xui-fieldlabel-layout" for="field1">Country</label>
+        <input class="xui-textinput xui-textinput--input" type="text" id="field1" placeholder="" />
+      </div>
+      <div class="xui-field-layout">
+        <label class="xui-text-label xui-fieldlabel-layout" for="ird2">Password</label>
+        <input class="xui-textinput xui-textinput--input" type="text" id="ird2" placeholder="" />
+      </div>
+      <input class="xui-button xui-button-main make-me-right" type="submit" value="Sign up" />
+    </form>
+  </div>
+
+  <!-- <button class="login-button xui-button-main" onclick="location.href='/.netlify/functions/server/login'" type="button">Login
+    with Xero</button> -->
+
+  <a href="/.netlify/functions/server/login"><img class="center-me xui-padding-top-large" src="/images/xero_login.png"></a>
+
 </body>
 
 </html>
