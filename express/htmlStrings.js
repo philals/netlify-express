@@ -1,6 +1,5 @@
 const css = `<style>
   body {
-    width: 650px;
     margin: auto;
   }
 
@@ -34,7 +33,7 @@ function appHtml(email, orgName, invoices) {
 ${css}
 <link rel="stylesheet" href="/css/demo.css">
 <link rel="stylesheet" href="/css/header-basic-light.css">
-<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 
 <body class="xui-body">
 
