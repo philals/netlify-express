@@ -118,7 +118,7 @@ ${css}
       </table>
     </div>
   </div>
-  <h3 class="xui-text-align-center">Looks like your spending the right amount on dinosaurs!</h3>
+  <h3 class="xui-text-align-center">Looks like you're spending the right amount on dinosaurs!</h3>
 
 </body>
 
