@@ -5,7 +5,7 @@ let config = {
   "appType": "partner",
   "consumerKey": process.env.OA1_CONSUMER_KEY,
   "consumerSecret": process.env.OA1_CONSUMER_SECRET,
-  // "privateKeyString": buf,
+  "privateKeyString": buf,
   "callbackUrl": process.env.URL + "/.netlify/functions/server/callback-oa1"
 }
 
