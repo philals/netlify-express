@@ -34,6 +34,7 @@ function appHtml(email, orgName, invoices) {
 <head>
   <link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.1/xui.min.css">
   <title>Serverless Netlify Xero SSO App</title>
+  <script src="https://raw.githubusercontent.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js" />
 </head>
 ${css}
 <link rel="stylesheet" href="/css/demo.css">
@@ -124,49 +125,6 @@ ${css}
 
 </html>
 `
-
-
-
-  return `
-<!DOCTYPE html>
-<html class="xui-html">
-<head>
-<link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.1/xui.min.css">
-<title>Dinosaur Expenses Monitoring - Before it's too late...</title>
-</head>
-${css}
-<body class="xui-body">
-  <h1>Netlify Xero SSO App</h1>
-  <img class="mountain-logo" src="/images/t-rex.png">
-  <p>Welcome ${email}</p>
-  <p>Your Org is: ${orgName}</p>
-  <h2>Here are a few of your bank accounts:</h2>
-
-<div class="xui-table xui-panel xui-table-hasheader">
-  <div class="xui-table-wrapper xui-padding-large">
-    <table class="xui-table-element">
-      <thead class="xui-table--head">
-        <tr class="xui-table--row xui-text-align-left">
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${invoices[0].Name}</span></th>
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-second" tabindex="0"><span>${invoices[0].BankAccountNumber}</span></th>
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-last" tabindex="0"><span><button class='xui-button xui-button-standard'>Copy</button></span></th>
-        </tr>
-        <tr class="xui-table--row xui-text-align-left">
-      <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${invoices[1].Name}</span></th>
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-second" tabindex="0"><span>${invoices[1].BankAccountNumber}</span></th>
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-last" tabindex="0"><span><button class='xui-button xui-button-standard'>Copy</button></span></th>        </tr>
-        <tr class="xui-table--row xui-text-align-left">
-      <th class="xui-table--cell xui-heading-separator xui-table--cell-first" tabindex="0"><span>${invoices[2].Name}</span></th>
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-second" tabindex="0"><span>${invoices[2].BankAccountNumber}</span></th>
-          <th class="xui-table--cell xui-heading-separator xui-table--cell-last" tabindex="0"><span><button class='xui-button xui-button-standard'>Copy</button></span></th>        </tr>
-      </thead>
-      <tbody class="xui-table--body"></tbody>
-    </table>
-  </div>
-</div>
-
-</body>
-</html>`
 }
 
 module.exports = { appHtml }
