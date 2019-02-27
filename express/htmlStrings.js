@@ -34,7 +34,7 @@ function appHtml(email, orgName, invoices) {
 <head>
   <link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.1/xui.min.css">
   <title>Serverless Netlify Xero SSO App</title>
-  <script src="https://raw.githubusercontent.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/davidjbradshaw/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
 </head>
 ${css}
 <link rel="stylesheet" href="/css/demo.css">
