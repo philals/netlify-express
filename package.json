@@ -28,8 +28,8 @@
     "xero-node": "^3.0.15"
   },
   "devDependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "netlify-lambda": "^0.4.0",
     "nodemon": "^1.18.7",
     "serverless-http": "^1.6.0"
